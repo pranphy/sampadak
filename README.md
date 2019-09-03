@@ -4,7 +4,7 @@ This is a utility application to help with all sorts of text processing related 
 
 
 # Installation 
-Simply clone this repository and put the location of  available `sampakak.py` in your path.
+Simply clone this repository and put the location of  executable `sampakak` in your path.
 
 
 # Usage 
