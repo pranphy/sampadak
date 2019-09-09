@@ -9,7 +9,7 @@
 import re
 
 from .mapping import Mapping as mpg
-from .prcmap import PrcMap as Prm
+from .mapping import PrcMap as Prm
 
 class Converter():
     def __init__(self):
