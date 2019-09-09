@@ -7,8 +7,8 @@
 
 import click
 
-from asctouni.converter import Converter
-from translit.translit import Translit
+from sampadak.converter import Converter
+from sampadak.translit import Translit
 
 def asciitouni(infile,outfile=None,*args,**kwargs):
     outfile = outfile or infile.replace('.','_uni.') 
@@ -28,7 +28,6 @@ def  unotoascii(infile,outfile,text,*args,**kwargs):
     if (infile and outfile) is not None:
         jp = outfile.replace('.txt','_real.txt')
         TRS.translit_file(infile,jp)
-    print('Bravo done')
     tr_text = ''
     if infile is None and text is not None:
         inputtext = text
@@ -47,10 +46,6 @@ def  unotoascii(infile,outfile,text,*args,**kwargs):
     else:
         with open(outfile,'w') as ofl:
             ofl.write(tr_text)
-
-
-    
-
 
 
 @click.command ()

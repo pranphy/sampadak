@@ -10,9 +10,9 @@ Clone this repository and install.
 ```
 git clone https://github.com/pranphy/sampadak.git
 cd sampadak
-python3 setup.py sdist
-pip setup.py install
+python3 setup.py install
 ```
+This should make `sampadak` executable availabel in CLI.
 
 
 
