@@ -9,8 +9,13 @@ class TransToUni():
     def __init__(self):
         pass
     
-    def get_unicode(self):
+    def get_unicode(self,word):
         pass
+
+
+
+
+
 
 if __name__ == '__main__':
     TTU = TransToUni()

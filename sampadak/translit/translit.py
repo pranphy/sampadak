@@ -11,6 +11,8 @@ import re
 
 from . import mapping as transmap
 
+
+
 class Translit():
     def __init__(self):
         pass
@@ -25,6 +27,10 @@ class Translit():
         line = re.sub(transmap.AAWRONG,transmap.AARIGHT,line)
         return line
 
+
+
+    def  calculate_distance(self,word1,word2):
+        pass
 
     
     def trans_to_ascii(self,uni_keys):
@@ -111,6 +117,10 @@ class Translit():
     def trans_to_unicode(self,ascii_keys):
         pass
 
+
+
+
+
     def  test_in_loop(self):
         a = ' '
         while not (a == ''):
@@ -119,6 +129,7 @@ class Translit():
             print(a)
             #a = input()
             print(self.trans_to_ascii(a))
+
 
 
 

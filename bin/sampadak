@@ -7,8 +7,8 @@
 
 import click
 
-from sampadak.converter import Converter
-from sampadak.translit import Translit
+from sampadak import Converter
+from sampadak import Translit
 
 def asciitouni(infile,outfile=None,*args,**kwargs):
     outfile = outfile or infile.replace('.','_uni.') 

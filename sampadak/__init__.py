@@ -7,4 +7,5 @@
 
 from .asctouni import converter
 from .translit import translit
-
+from .asctouni.converter import Converter
+from .translit.translit import Translit
