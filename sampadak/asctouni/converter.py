@@ -27,11 +27,25 @@ class Converter():
         return paragraph
     
     def process_before_char_sub(self,paragraph):
+        """
+        Processes the word before character substitution
+
+        :type    paragraph: str
+        :param   paragraph: word or paragraph to process
+
+        """
         pre_rex = mpg.getPreRex()
         paragraph = self.sub_rex_array(paragraph,pre_rex)
         return paragraph
     
     def convert_preeti(self,paragraph):
+        """
+        Convert a given paragraph from preeti to unicode
+
+        :type    paragraph: str
+        :param   paragraph: word or paragraph to convert to unicode, assumes its composed of ascii of preeti
+
+        """
         post_rex = self.preeti_post_rex
         paragraph = self.process_before_char_sub(paragraph) 
         converted_par = '' # Huge bug found  Fri Apr  5 00:07:45 EDT 2019, whas ' ' instead of ''
@@ -52,6 +66,16 @@ class Converter():
         return converted_par
                    
     def convert_word(self,word,font='preeti'):
+        """
+        Convert word of ascii to unicode of given font
+
+        :type    word: str
+        :param   word: the word to convert
+
+        :type    font: str
+        :param   font: the identifier of font to convert from
+
+        """
         converted = word
         if font == 'preeti':
             converted = self.convert_preeti(word)

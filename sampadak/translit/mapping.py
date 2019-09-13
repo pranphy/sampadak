@@ -8,6 +8,11 @@
 
 
 class Group():
+    """
+    A collection of grouped devanagari characters to convert
+    to their corresponding romanized ascii values.
+
+    """
     class consonants:
         # There are some characters which if appearing
         # in the end of word are pronunced without the 
@@ -126,6 +131,12 @@ class Group():
         all = [k for k in maps]
 
 def get_map():
+    """
+    Returns the map of all devanagari characters to corresponding
+    ascii characters for romanization
+
+    """
+
     return dict(
         **Group.vowel_full.maps,
         **Group.vowel_suffix.maps,
