@@ -5,12 +5,10 @@
 # author : Prakash [प्रकाश]
 # date   : 2019-08-09 17:52
 
-#from .mapping import Mapping as transmap
 
 import re
 
 from . import mapping as transmap
-
 
 
 class Translit():
@@ -63,7 +61,6 @@ class Translit():
             # if they are at the end like the on in the list below
             if i == keys_length-1:
                 if char in transmap.END_CONSONANT_FULL:
-                    #print(f' for word {uni_keys} the last character {char} is among the full ')
                     full_char = True
                 else:
                     full_char = False
@@ -82,7 +79,7 @@ class Translit():
             try:
                 asc_val = map_dict[char]
             except:
-                print('Unknown character ',char)
+                raise Exception('Unknown character ',char)
                 asc_val = char
 
             asc_char = asc_val+'a' if full_char else asc_val
@@ -94,7 +91,7 @@ class Translit():
         return word
 
 
-    def translit_file(self,ipfile,opfile):
+    def translit_wordlist(self,ipfile,opfile):
         wordlist = []
         print('writing file ',opfile)
         with open(ipfile,'r') as ifile:
@@ -109,16 +106,10 @@ class Translit():
                         asc_word = self.trans_to_ascii(word)
                         if word not in wordlist:
                             ofile.write(f'{word} : {asc_word} \n')
-
                         wordlist.append(word)
-
         
-
     def trans_to_unicode(self,ascii_keys):
-        pass
-
-
-
+        trans_map = {}
 
 
     def  test_in_loop(self):
@@ -131,8 +122,7 @@ class Translit():
             print(self.trans_to_ascii(a))
 
 
-
-
 if __name__ == '__main__':
     MP = Translit()
     MP.trans_to_ascii(other_params)
+

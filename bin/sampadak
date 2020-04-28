@@ -24,10 +24,21 @@ def asciitouni(infile,outfile=None,*args,**kwargs):
     print('Written file ',outfile) 
 
 def  unotoascii(infile,outfile,text,*args,**kwargs):
+    """
+    Conerts unicode file to transliterted ascii files
+
+    :type    infile: str
+    :param   infile: the name of input file in unicode
+
+    :type    outfile: str
+    :param   outfile: the name of outputfile to have the ascii transliterated output
+
+    :type    text: str
+    :param   text: any extra text to convert
+
+    """
+
     TRS = Translit()
-    if (infile and outfile) is not None:
-        jp = outfile.replace('.txt','_real.txt')
-        TRS.translit_file(infile,jp)
     tr_text = ''
     if infile is None and text is not None:
         inputtext = text
@@ -46,6 +57,12 @@ def  unotoascii(infile,outfile,text,*args,**kwargs):
     else:
         with open(outfile,'w') as ofl:
             ofl.write(tr_text)
+
+
+def  translit_wordlist(infile,outfile,text,*args,**kwargs):
+    if (infile and outfile) is not None:
+        jp = outfile.replace('.txt','_real.txt')
+        TRS.translit_file(infile,jp)
 
 
 @click.command ()
